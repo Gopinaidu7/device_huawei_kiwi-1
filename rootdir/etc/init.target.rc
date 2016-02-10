@@ -157,6 +157,17 @@ on boot
     chown system drmrpc /sys/devices/soc.0/78b9000.i2c/i2c-5/5-0070/secure_touch_enable
     chown system drmrpc /sys/devices/soc.0/78b9000.i2c/i2c-5/5-0070/secure_touch
 
+    # leds
+    chown system system /sys/class/leds/red/blink
+    chown system system /sys/class/leds/green/blink
+    chown system system /sys/class/leds/blue/blink
+    chown system system /sys/class/leds/red/onMS
+    chown system system /sys/class/leds/green/onMS
+    chown system system /sys/class/leds/blue/onMS
+    chown system system /sys/class/leds/red/offMS
+    chown system system /sys/class/leds/green/offMS
+    chown system system /sys/class/leds/blue/offMS
+
 service ppd /system/bin/mm-pp-daemon
     class late_start
     disabled
