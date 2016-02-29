@@ -10,5 +10,11 @@
     "repository": "crpalmer/proprietary_vendor_huawei",
     "target_path": "vendor/huawei",
     "branch": "cm-12.1"
+  },
+  {
+    "remote": "github",
+    "repository": "SlimRoms/android_system_extras_su",
+    "target_path": "system/extras/su",
+    "branch": "lp5.1"
   }
 ]
