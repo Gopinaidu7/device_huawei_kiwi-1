@@ -14,8 +14,8 @@
 
 $(call inherit-product, device/huawei/kiwi/full_kiwi.mk)
 
-# Inherit some common CM stuff.
-$(call inherit-product, vendor/cm/config/common_full_phone.mk)
+# Inherit some common Broken stuff.
+$(call inherit-product, vendor/broken/config/common_full_phone.mk)
 
-PRODUCT_NAME := cm_kiwi
+PRODUCT_NAME := broken_kiwi
 BOARD_VENDOR := huawei
