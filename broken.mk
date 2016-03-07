@@ -19,3 +19,5 @@ $(call inherit-product, vendor/broken/config/common_full_phone.mk)
 
 PRODUCT_NAME := broken_kiwi
 BOARD_VENDOR := huawei
+
+PRODUCT_GMS_CLIENTID_BASE := android-huawei
