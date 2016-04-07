@@ -96,9 +96,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     charger_res_images
 
-# CMHw
-BOARD_HARDWARE_CLASS += $(DEVICE_PATH)/cmhw/src
-
 # Compatibility
 PRODUCT_PACKAGES += \
     libboringssl-compat \
@@ -106,7 +103,7 @@ PRODUCT_PACKAGES += \
     libshim_cutils \
     libshim_gps \
     libshim_ril \
-    libshim_sensor_manager \
+    libshim_sensormanager \
     libshim_sound_trigger \
     libstlport
 
@@ -125,10 +122,8 @@ PRODUCT_PACKAGES += \
 
 # FM
 PRODUCT_PACKAGES += \
-    FM2 \
-    FMRecord \
-    libqcomfm_jni \
-    qcom.fmradio
+    FMRadio \
+    libfmjni
 
 # GPS
 PRODUCT_PACKAGES += \

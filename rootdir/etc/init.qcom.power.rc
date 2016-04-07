@@ -20,6 +20,9 @@ on enable-low-power
     # disable thermal core_control to update interactive gov settings
     write /sys/module/msm_thermal/core_control/enabled 0
 
+    # Disable cluster plug to update interactive gov settings
+    write /sys/module/cluster_plug/parameters/active 0
+
     # enable governor for perf cluster
     write /sys/devices/system/cpu/cpu0/online 1
     write /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor "interactive"
@@ -59,6 +62,10 @@ on enable-low-power
     write /proc/sys/kernel/sched_freq_inc_notify 50000
     write /proc/sys/kernel/sched_freq_dec_notify 50000
 
+    # Enable cluster plug now and allow the powerhal to control it
+    chown system system /sys/module/cluster_plug/parameters/low_power_mode
+    write /sys/module/cluster_plug/parameters/active 1
+
     # bring all CPUs online
     write /sys/devices/system/cpu/cpu1/online 1
     write /sys/devices/system/cpu/cpu2/online 1
@@ -89,13 +96,20 @@ on enable-low-power
 
     write /sys/module/lpm_levels/parameters/sleep_disabled 0
 
+    # Per-process reclaim
+    write /sys/module/process_reclaim/parameters/enable_process_reclaim 1
+    write /sys/module/process_reclaim/parameters/pressure_min 10
+    write /sys/module/process_reclaim/parameters/per_swap_size 1024
+    write /sys/module/process_reclaim/parameters/pressure_max 70
+    write /sys/module/process_reclaim/parameters/swap_opt_eff 30
+
     start perfd
 
 on charger
     write /sys/module/lpm_levels/parameters/sleep_disabled 0
     write /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor "powersave"
 
-on class_start:late_start
+on property:sys.boot_completed=1
     trigger enable-low-power
 
 on property:init.svc.recovery=running
