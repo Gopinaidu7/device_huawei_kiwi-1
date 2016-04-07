@@ -1,12 +1,6 @@
 [
   {
     "remote": "github",
-    "repository": "BrokenROM/device_qcom_common",
-    "target_path": "device/qcom/common",
-    "branch": "m6.0.1"
-  },
-  {
-    "remote": "github",
     "repository": "Cyanogenmod/android_external_sony_boringssl-compat",
     "target_path": "external/sony/boringssl-compat",
     "branch": "cm-13.0"
