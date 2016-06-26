@@ -21,8 +21,6 @@ import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
 import android.util.Log;
 
-import org.cyanogenmod.internal.util.FileUtils;
-
 public final class CMActionsSettings {
     private static final String TAG = "CMActions";
 
@@ -70,6 +68,5 @@ public final class CMActionsSettings {
         }
 
         Log.d(TAG, "finished gesture mode: " + gestureMode);
-        FileUtils.writeLine(TOUCHSCREEN_GESTURE_MODE_NODE, String.valueOf(gestureMode));
     }
 }
