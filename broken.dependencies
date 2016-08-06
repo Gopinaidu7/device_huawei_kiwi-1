@@ -17,6 +17,12 @@
     "target_path": "kernel/huawei/kiwi",
     "branch": "m6.0.1"
   },
+   {
+    "remote": "github",
+    "repository": "dfuse06/aarch64-linux-android-4.9-kernel",
+    "target_path": "prebuilts/gcc/linux-x86/aarch64/aarch64-linux-android-4.9-kernel",
+    "branch": "master"
+  },
   {
     "remote": "github",
     "repository": "TheMuppets/proprietary_vendor_huawei",
