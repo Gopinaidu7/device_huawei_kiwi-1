@@ -26,7 +26,7 @@
   {
     "remote": "github",
     "repository": "dfuse06/vendor_huawei_kiwi",
-    "target_path": "vendor/huawei",
+    "target_path": "vendor/huawei/kiwi",
     "branch": "m6.0.1"
   }
 ]
