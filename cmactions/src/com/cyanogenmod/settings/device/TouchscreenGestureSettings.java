@@ -16,8 +16,6 @@
 
 package com.cyanogenmod.settings.device;
 
-import com.android.internal.util.cm.ScreenType;
-
 import android.app.ActionBar;
 import android.content.Context;
 import android.os.Bundle;
@@ -30,6 +28,7 @@ import android.provider.Settings;
 import android.view.MenuItem;
 import android.view.ViewGroup;
 
+import cyanogenmod.providers.CMSettings;
 
 public class TouchscreenGestureSettings extends PreferenceActivity {
 
@@ -59,14 +58,8 @@ public class TouchscreenGestureSettings extends PreferenceActivity {
     @Override
     protected void onResume() {
         super.onResume();
-
-        // If running on a phone, remove padding around the listview
-        if (!ScreenType.isTablet(this)) {
-            getListView().setPadding(0, 0, 0, 0);
-        }
-
-        mHapticFeedback.setChecked(
-                Settings.System.getInt(getContentResolver(), KEY_HAPTIC_FEEDBACK, 1) != 0);
+        mHapticFeedback.setChecked(CMSettings.System.getInt(getContentResolver(),
+                CMSettings.System.TOUCHSCREEN_GESTURE_HAPTIC_FEEDBACK, 1) != 0);
     }
 
     @Override
@@ -83,7 +76,8 @@ public class TouchscreenGestureSettings extends PreferenceActivity {
         @Override
         public boolean onPreferenceChange(Preference preference, Object newValue) {
             final boolean value = (Boolean) newValue;
-            Settings.System.putInt(getContentResolver(), KEY_HAPTIC_FEEDBACK, value ? 1 : 0);
+            CMSettings.System.putInt(getContentResolver(),
+                    CMSettings.System.TOUCHSCREEN_GESTURE_HAPTIC_FEEDBACK, value ? 1 : 0);
             return true;
         }
     };

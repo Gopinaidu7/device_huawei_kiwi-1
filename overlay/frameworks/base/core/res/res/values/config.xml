@@ -107,7 +107,7 @@
     <!-- Flag indicating whether we should enable the automatic brightness in Settings.
                   config_hardware_automatic_brightness_available is not set, so we will use software implementation -->
     <bool name="config_automatic_brightness_available">true</bool>
-
+    
     <!-- Whether a software navigation bar should be shown. NOTE: in the future this may be
          autodetected from the Configuration. -->
     <bool name="config_showNavigationBar">true</bool>
@@ -142,7 +142,7 @@
 
     <!-- Default color for notification LED. -->
     <color name="config_defaultNotificationColor">#ff00ff00</color>
-
+    
     <!-- Does the battery LED support multiple colors?
          Used to decide if the user can change the colors -->
     <bool name="config_multiColorBatteryLed">false</bool>
@@ -172,12 +172,15 @@
          it causes the device to wake up.
          The default is false. -->
     <bool name="config_lidControlsSleep">true</bool>
-
+    
     <!-- Default value for proximity check on screen wake
      NOTE ! - Enable for devices that have a fast response proximity sensor (ideally < 300ms) -->
     <bool name="config_proximityCheckOnWake">true</bool>
     <integer name="config_proximityCheckTimeout">100</integer>
     <bool name="config_proximityCheckOnWakeEnabledByDefault">true</bool>
+    
+    <!-- Show battery fully charged notification -->
+    <bool name="config_showBatteryFullyChargedNotification">true</bool>
 
     <!-- Operating voltage for bluetooth controller. 0 by default-->
     <integer name="config_bluetooth_operating_voltage_mv">3300</integer>
