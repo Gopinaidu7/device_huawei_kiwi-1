@@ -79,7 +79,7 @@ persist.timed.enable=true
 dev.pm.dyn_samplingrate=1
 qemu.hw.mainkeys=0
 ro.qcom.ad.sensortype=2
-ro.sf.lcd_density=480
+ro.sf.lcd_density=400
 ro.vendor.extension_library=libqti-perfd-client.so
 
 # Radio
